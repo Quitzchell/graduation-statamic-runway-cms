@@ -1,0 +1,39 @@
+services:
+
+    backend:
+        build:
+            context: .
+            dockerfile: dev.dockerfile
+            args:
+                IMAGE: allesonline/laravel:php8.3-node20-alpine3.19-dev
+        user:
+            docker:docker
+        ports:
+            - "8080:8080"
+        labels:
+            - "traefik.enable=true"
+            - "traefik.docker.network=traefik_network"
+            - 'traefik.http.routers.${PROJECT_NAME}-web.rule=Host(`${PROJECT_NAME}-admin.local.alles.onl`)'
+            - "traefik.http.routers.${PROJECT_NAME}-web.entrypoints=web,websecure"
+            - "traefik.http.routers.${PROJECT_NAME}-web.service=${PROJECT_NAME}-web"
+            - "traefik.http.services.${PROJECT_NAME}-web.loadbalancer.server.port=8080"
+        environment:
+            - COMPOSER_INSTALL=0
+            - ARTISAN_MIGRATE=0
+            - ARTISAN_SCHEDULE_MONITOR_SYNC=0
+            - ENABLE_NGINX=1
+            - ENABLE_PHP_FPM=1
+            - ENABLE_HORIZON=0
+            - ENABLE_SCHEDULER=0
+        extra_hosts:
+            - "graduation-project-admin.local.alles.onl:host-gateway"
+        volumes:
+            - .:/var/www/html
+        networks:
+            - default
+            - traefik_network
+
+networks:
+    default:
+    traefik_network:
+        external: true
