@@ -13,7 +13,7 @@ return [
 
     'enabled' => env('CP_ENABLED', true),
 
-    'route' => env('CP_ROUTE', 'cp'),
+    'route' => env('CP_ROUTE', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -53,7 +53,7 @@ return [
     */
 
     'widgets' => [
-        'getting_started',
+//        'getting_started',
     ],
 
     /*
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'date_format' => 'Y-m-d',
+    'date_format' => 'd-m-Y',
 
     /*
     |--------------------------------------------------------------------------
