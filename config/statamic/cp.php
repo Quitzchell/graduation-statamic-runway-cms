@@ -11,9 +11,9 @@ return [
     |
     */
 
-    'enabled' => env('CP_ENABLED', true),
+    'enabled' => true,
 
-    'route' => env('CP_ROUTE', ''),
+    'route' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -133,7 +133,7 @@ return [
     |
     */
 
-    'custom_cms_name' => env('STATAMIC_CUSTOM_CMS_NAME', 'Statamic'),
+    'custom_cms_name' => env('APP_NAME', 'AllesOnline CMS'),
 
     'custom_logo_url' => env('STATAMIC_CUSTOM_LOGO_URL', null),
 
