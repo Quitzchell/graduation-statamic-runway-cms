@@ -1,0 +1,58 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+              listable: false
+              sortable: false
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Excerpt
+              listable: false
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: blogposts
+              type: assets
+              display: image
+              listable: false
+      -
+        display: Content
+        fields:
+          -
+            handle: content
+            field:
+              type: replicator
+              display: Content
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    paragraph:
+                      display: Paragraph
+                      fields:
+                        -
+                          import: paragraph
+                    image:
+                      display: Image
+                      fields:
+                        -
+                          import: image
+title: 'Blog post'
