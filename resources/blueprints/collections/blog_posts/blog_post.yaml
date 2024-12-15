@@ -2,39 +2,33 @@ tabs:
   main:
     display: Main
     sections:
-      -
-        fields:
-          -
-            handle: title
+      - fields:
+          - handle: title
             field:
               type: text
               required: true
               validate:
                 - required
-          -
-            handle: slug
+          - handle: slug
             field:
               type: slug
               localizable: true
               validate: 'max:200'
               listable: false
               sortable: false
-          -
-            handle: excerpt
+          - handle: excerpt
             field:
               type: textarea
               display: Excerpt
               listable: false
-          -
-            handle: image
+          - handle: image
             field:
               max_files: 1
               container: blogposts
               type: assets
               display: image
               listable: false
-          -
-            handle: category_id
+          - handle: category_id
             field:
               max_items: 1
               mode: select
@@ -46,38 +40,41 @@ tabs:
               listable: true
               replicator_preview: false
               duplicate: false
-          -
-            handle: published_at
+          - handle: published_at
             field:
               type: date
               display: 'Published at'
               listable: true
-          -
-            handle: published
+          - handle: published
             field:
               type: toggle
               display: Published
               listable: true
-      -
-        display: Content
+      - display: Content
         fields:
-          -
-            handle: content
+          - handle: blocks
             field:
               type: replicator
-              display: Content
+              display: Blocks
+              listable: false
               sets:
-                new_set_group:
-                  display: 'New Set Group'
+                cms_content:
+                  display: 'CMS content'
                   sets:
                     paragraph:
                       display: Paragraph
                       fields:
-                        -
-                          import: paragraph
+                        - import: paragraph
                     image:
                       display: Image
                       fields:
-                        -
-                          import: image
+                        - import: image
+                    map:
+                      display: Map
+                      fields:
+                        - import: map
+                    call_to_action:
+                      display: 'Call to Action'
+                      fields:
+                        - import: call_to_action
 title: 'Blog post'
