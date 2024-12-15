@@ -5,7 +5,9 @@ title: 'Battlefield Insights: The Art of Strategy and Tactics in Warfare'
 excerpt: 'Today I wish to share with you some profound insights into the military strategies and tactics that have shaped the course of history on the battlefield. Warfare, as you may know, is not merely about brute strength; it is a complex dance of strategy, deception, and swift maneuvering. Allow me to elucidate the principles that have guided my campaigns and shaped my successes.'
 image: napoleon-war.jpg
 updated_by: 1
-updated_at: 1733953556
+updated_at: 1734273040
+category_id: 3cb0476b-b889-4ffb-b07f-f00beb88358a
+published_at: '1806-07-02'
 content:
   -
     id: m4kf0vzj
