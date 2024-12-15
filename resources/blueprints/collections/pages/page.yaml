@@ -48,7 +48,7 @@ tabs:
                 cms_content:
                   display: 'CMS content'
                   sets:
-                    new_set:
+                    paragraph:
                       display: Paragraph
                       fields:
                         -

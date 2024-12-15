@@ -45,16 +45,25 @@ tabs:
               display: Blocks
               listable: false
               sets:
-                new_set_group:
-                  display: 'New Set Group'
+                cms_content:
+                  display: 'CMS content'
                   sets:
-                    new_set:
+                    paragraph:
                       display: Paragraph
                       fields:
-                        -
-                          import: paragraph
-                        -
-                          import: image
+                        - import: paragraph
+                    image:
+                      display: Image
+                      fields:
+                        - import: image
+                    map:
+                      display: Map
+                      fields:
+                        - import: map
+                    call_to_action:
+                      display: 'Call to Action'
+                      fields:
+                        - import: call_to_action
   sidebar:
     display: Sidebar
     sections:
