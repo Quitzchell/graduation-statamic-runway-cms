@@ -8,8 +8,6 @@ services:
                 IMAGE: allesonline/laravel:php8.3-node20-alpine3.19-dev
         user:
             docker:docker
-        ports:
-            - "8080:8080"
         labels:
             - "traefik.enable=true"
             - "traefik.docker.network=traefik_network"
