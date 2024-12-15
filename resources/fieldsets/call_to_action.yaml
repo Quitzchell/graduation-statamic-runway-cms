@@ -1,0 +1,48 @@
+title: 'Call to Action'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: text
+    field:
+      buttons:
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+        - bold
+        - italic
+        - underline
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+      save_html: true
+      remove_empty_nodes: trim
+      type: bard
+      display: Text
+      listable: false
+  -
+    handle: urlable_id
+    field:
+      max_items: 1
+      collections:
+        - pages
+      type: entries
+      display: 'Button url'
+      listable: false
+      sortable: false
+      replicator_preview: false
+      duplicate: false
+  - handle: button_text
+    field:
+      type: text
+      display: Button text
