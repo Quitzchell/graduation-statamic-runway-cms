@@ -33,6 +33,31 @@ tabs:
               type: assets
               display: image
               listable: false
+          -
+            handle: category_id
+            field:
+              max_items: 1
+              mode: select
+              create: false
+              collections:
+                - categories
+              type: entries
+              display: category
+              listable: true
+              replicator_preview: false
+              duplicate: false
+          -
+            handle: published_at
+            field:
+              type: date
+              display: 'Published at'
+              listable: true
+          -
+            handle: published
+            field:
+              type: toggle
+              display: Published
+              listable: true
       -
         display: Content
         fields:
