@@ -55,6 +55,11 @@ tabs:
                           import: paragraph
                         -
                           import: image
+                    map:
+                      display: Map
+                      fields:
+                        -
+                          import: map
   sidebar:
     display: Sidebar
     sections:
