@@ -53,6 +53,9 @@ tabs:
                       fields:
                         -
                           import: paragraph
+                    image:
+                      display: Image
+                      fields:
                         -
                           import: image
                     map:
