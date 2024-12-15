@@ -1,0 +1,91 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: reviewable
+            field:
+              max_items: 1
+              create: false
+              type: entries
+              display: 'Subject of review'
+              listable: true
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: score
+            field:
+              type: integer
+              display: score
+              listable: false
+              sortable: false
+              replicator_preview: false
+              duplicate: false
+              validate:
+                - required
+                - 'min:0'
+                - 'max:10'
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Excerpt
+              listable: false
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: blogposts
+              type: assets
+              display: image
+              listable: false
+          -
+            handle: published_at
+            field:
+              type: date
+              display: 'Published at'
+              listable: true
+              width: 50
+          -
+            handle: published
+            field:
+              type: toggle
+              display: Published
+              listable: true
+              width: 50
+      -
+        display: Content
+        fields:
+          -
+            handle: content
+            field:
+              type: replicator
+              display: Content
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    paragraph:
+                      display: Paragraph
+                      fields:
+                        -
+                          import: paragraph
+                    image:
+                      display: Image
+                      fields:
+                        -
+                          import: image
+title: Review
