@@ -38,8 +38,7 @@ tabs:
               container: default
               type: assets
               display: 'Header image'
-          -
-            handle: blocks
+          - handle: blocks
             field:
               type: replicator
               display: Blocks
@@ -51,10 +50,15 @@ tabs:
                     new_set:
                       display: Paragraph
                       fields:
-                        -
-                          import: paragraph
-                        -
-                          import: image
+                        - import: paragraph
+                    image:
+                      display: Image
+                      fields:
+                        - import: image
+                    map:
+                      display: Map
+                      fields:
+                        - import: map
   sidebar:
     display: Sidebar
     sections:
