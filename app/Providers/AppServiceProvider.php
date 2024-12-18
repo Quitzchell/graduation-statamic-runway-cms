@@ -11,10 +11,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
-    public function register(): void
-    {
-        //
-    }
+    public function register(): void {}
 
     /**
      * Bootstrap any application services.
@@ -23,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Statamic::vite('app', [
             'resources/js/cp.js',
-            'resources/css/cp.css'
+            'resources/css/cp.css',
         ]);
 
         $this->updatePHPIniFromConfig();
