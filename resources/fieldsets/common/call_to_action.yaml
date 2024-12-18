@@ -42,7 +42,18 @@ fields:
       sortable: false
       replicator_preview: false
       duplicate: false
-  - handle: button_text
+  -
+    handle: button_text
     field:
       type: text
-      display: Button text
+      display: 'Button text'
+  -
+    handle: namespace
+    field:
+      default: common
+      type: text
+      display: Namespace
+      sortable: false
+      visibility: hidden
+      replicator_preview: false
+      duplicate: false

@@ -51,19 +51,19 @@ tabs:
                     paragraph:
                       display: Paragraph
                       fields:
-                        - import: paragraph
+                        - import: common.paragraph
                     image:
                       display: Image
                       fields:
-                        - import: image
+                        - import: common.image
                     map:
                       display: Map
                       fields:
-                        - import: map
+                        - import: common.map
                     call_to_action:
                       display: 'Call to Action'
                       fields:
-                        - import: call_to_action
+                        - import: common.call_to_action
   sidebar:
     display: Sidebar
     sections:

@@ -30,3 +30,12 @@ fields:
       type: bard
       display: Text
       listable: false
+  - handle: namespace
+    field:
+      default: common
+      type: text
+      display: Namespace
+      sortable: false
+      visibility: hidden
+      replicator_preview: false
+      duplicate: false
