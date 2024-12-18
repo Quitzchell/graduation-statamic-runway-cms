@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'enabled' => env('STATAMIC_API_ENABLED', true),
+    'enabled' => false,
 
     'resources' => [
         'collections' => false,
