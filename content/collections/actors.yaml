@@ -1,13 +1,18 @@
-title: Reviews
-mount: 8a254262-90b1-4eb7-918a-e7d60d81a683
+title: Actors
 revisions: false
+slugs: false
 sort_dir: asc
-default_status: draft
+title_format: '{name} {middle_name} {surname}'
+
 date_behavior:
   past: public
   future: private
+
 preview_targets:
   -
     label: Entry
     url: '{permalink}'
     refresh: true
+
+blueprints:
+  - actor

@@ -6,6 +6,14 @@ tabs:
       -
         display: 'General information'
         fields:
+          - handle: template
+            field:
+              dictionary: templates
+              default: review
+              type: dictionary
+              display: Template
+              listable: false
+              visibility: hidden
           -
             handle: title
             field:

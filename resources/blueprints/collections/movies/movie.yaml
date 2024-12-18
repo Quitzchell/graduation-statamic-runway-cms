@@ -11,6 +11,7 @@ tabs:
               required: true
               validate:
                 - required
+              width: 75
           -
             handle: release_year
             field:
@@ -23,6 +24,12 @@ tabs:
                 - required
                 - 'min:1800'
                 - 'max:2100'
+              width: 25
+          -
+            handle: trailer_url
+            field:
+              type: video
+              display: 'Trainer link (YouTube)'
           -
             handle: description
             field:
@@ -33,10 +40,22 @@ tabs:
               replicator_preview: false
               duplicate: false
           -
-            handle: trailer_url
+            handle: actors
             field:
-              type: video
-              display: Trainer link (YouTube)
+              collections:
+                - actors
+              type: entries
+              display: Actors
+              width: 50
+          -
+            handle: director
+            field:
+              collections:
+                - directors
+              max_items: 1
+              type: entries
+              display: Director
+              width: 50
   sidebar:
     display: Sidebar
     sections:

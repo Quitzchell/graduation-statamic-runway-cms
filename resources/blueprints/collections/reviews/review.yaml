@@ -2,31 +2,30 @@ tabs:
   main:
     display: Main
     sections:
-      -
-        fields:
-          -
-            handle: reviewable
+      - fields:
+          - handle: reviewable
             field:
               max_items: 1
               create: false
               type: entries
               display: 'Subject of review'
               listable: true
-          -
-            handle: title
+              collections:
+                - movies
+          - handle: title
             field:
               type: text
               required: true
               validate:
                 - required
-          -
-            handle: slug
+          - handle: slug
             field:
               type: slug
               localizable: true
               validate: 'max:200'
-          -
-            handle: score
+              listable: false
+              sortable: false
+          - handle: score
             field:
               type: integer
               display: score
@@ -38,36 +37,26 @@ tabs:
                 - required
                 - 'min:0'
                 - 'max:10'
-          -
-            handle: excerpt
+          - handle: excerpt
             field:
               type: textarea
               display: Excerpt
               listable: false
-          -
-            handle: image
+              sortable: false
+          - handle: image
             field:
               max_files: 1
               container: blogposts
               type: assets
               display: image
               listable: false
-          -
-            handle: published_at
+              sortable: false
+          - handle: published_at
             field:
               type: date
               display: 'Published at'
               listable: true
-              width: 50
-          -
-            handle: published
-            field:
-              type: toggle
-              display: Published
-              listable: true
-              width: 50
-      -
-        display: Content
+      - display: Content
         fields:
           - handle: blocks
             field:
