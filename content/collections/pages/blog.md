@@ -6,5 +6,6 @@ header_title: Entries
 header_image:
   - napoleon-reading.jpg
 updated_by: 1
-updated_at: 1733952505
+updated_at: 1734463300
+template: blog
 ---
