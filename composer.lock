@@ -4516,16 +4516,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v5.42.1",
+            "version": "v5.43.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "d62cc13484aa28ec532f814669630f8c5c4a3915"
+                "reference": "42c3804dd43c14090b91a367f493d0e64fca3add"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/d62cc13484aa28ec532f814669630f8c5c4a3915",
-                "reference": "d62cc13484aa28ec532f814669630f8c5c4a3915",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/42c3804dd43c14090b91a367f493d0e64fca3add",
+                "reference": "42c3804dd43c14090b91a367f493d0e64fca3add",
                 "shasum": ""
             },
             "require": {
@@ -4535,7 +4535,7 @@
                 "guzzlehttp/guzzle": "^6.3 || ^7.0",
                 "james-heinrich/getid3": "^1.9.21",
                 "laravel/framework": "^10.40 || ^11.34",
-                "laravel/prompts": "^0.1.16",
+                "laravel/prompts": "^0.1.16 || ^0.2.0 || ^0.3.0",
                 "league/commonmark": "^2.2",
                 "league/csv": "^9.0",
                 "league/glide": "^2.3",
@@ -4610,7 +4610,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v5.42.1"
+                "source": "https://github.com/statamic/cms/tree/v5.43.2"
             },
             "funding": [
                 {
@@ -4618,7 +4618,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-11T21:36:25+00:00"
+            "time": "2024-12-18T20:49:18+00:00"
         },
         {
             "name": "statamic/stringy",
