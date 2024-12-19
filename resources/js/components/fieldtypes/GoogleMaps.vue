@@ -36,13 +36,19 @@ export default {
         return {
             map: null,
             marker: null,
-            coordinates: this.value.coordinates,
-            displayAddress: this.value.formatted_address || "",
-            addressObject: this.value || {},
             autocomplete: null,
             searchQuery: "",
             loader: null,
         };
+    },
+
+    computed: {
+        coordinates() {
+            return this.value.coordinates || { lat: -33.8688, lng: 151.2195 };
+        },
+        displayAddress() {
+            return this.value.formatted_address || "";
+        },
     },
 
     mounted() {
@@ -123,7 +129,6 @@ export default {
             };
 
             this.displayAddress = formatted_address;
-            this.addressObject = address;
             this.coordinates = address.coordinates;
 
             this.map.setCenter(address.coordinates);
