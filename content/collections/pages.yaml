@@ -7,3 +7,4 @@ date_behavior:
 structure:
   root: false
   max_depth: 2
+route: '/{slug}'
