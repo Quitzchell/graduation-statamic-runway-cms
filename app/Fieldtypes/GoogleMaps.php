@@ -17,7 +17,7 @@ class GoogleMaps extends Fieldtype
         ];
     }
 
-    public function defaultValue()
+    public function defaultValue(): null
     {
         return null;
     }
