@@ -35,7 +35,8 @@ fields:
     field:
       type: google_maps
       display: 'Google maps'
-  - handle: namespace
+  -
+    handle: namespace
     field:
       default: common
       type: text
