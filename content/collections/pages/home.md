@@ -13,7 +13,28 @@ blocks:
     namespace: common
     type: paragraph
     enabled: true
+  -
+    id: m4ua63d6
+    title: 'A new conquest'
+    text: '<p>I invite you to join me on a new conquest, not of nations but of cinema and literature! Much as I once sought to reshape Europe, I now seek to navigate the vast empire of film, and I need you by my side. Do you dare follow me, loyal subjects, in this new adventure? Then visit my reviews page into the world of film and literature!</p>'
+    urlable_id: 8a254262-90b1-4eb7-918a-e7d60d81a683
+    button_text: 'Read more'
+    namespace: common
+    type: call_to_action
+    enabled: true
+  -
+    id: m4udna2o
+    namespace: common
+    type: map
+    enabled: true
+    google_maps:
+      formatted_address: '129 Rue de Grenelle, 75007 Paris, France'
+      coordinates:
+        lat: 48.8581983
+        lng: 2.3130361
+    title: 'I await your visit'
+    text: '<p>Visit me at Les Invalides, where I, Napoleon Bonaparte, rest. Stand before me, and discuss the ambition, triumphs, and sacrifices that shaped our history.</p>'
 updated_by: 1
-updated_at: 1734471698
+updated_at: 1734556580
 template: homepage
 ---
