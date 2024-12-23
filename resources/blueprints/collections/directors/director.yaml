@@ -2,40 +2,49 @@ tabs:
   main:
     display: Main
     sections:
-      - fields:
-          - handle: title
+      -
+        fields:
+          -
+            handle: title
             field:
-              display: 'Name'
               type: text
               required: false
+              display: Name
               visibility: hidden
-          - handle: name
+          -
+            handle: name
             field:
               type: text
               validate:
                 - required
               display: Name
-              listable: true
-          - handle: middle_name
+              listable: false
+              sortable: false
+          -
+            handle: middle_name
             field:
               type: text
               display: 'Middle name'
-              listable: true
+              listable: false
               sortable: false
-          - handle: surname
+          -
+            handle: surname
             field:
               type: text
               validate:
                 - required
               display: Surname
-              listable: true
-          - handle: date_of_birth
+              listable: false
+              sortable: false
+          -
+            handle: date_of_birth
             field:
               type: date
               display: 'Date of Birth'
               listable: false
               width: 50
-          - handle: movies
+          -
+            handle: movies
             field:
               mode: select
               type: entries
@@ -43,4 +52,6 @@ tabs:
               listable: false
               sortable: false
               width: 50
+              collections:
+                - movies
 title: Director

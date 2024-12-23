@@ -3,9 +3,11 @@ tabs:
   main:
     display: Main
     sections:
-      - display: 'General information'
+      -
+        display: 'General information'
         fields:
-          - handle: template
+          -
+            handle: template
             field:
               dictionary: templates
               default: blog
@@ -13,7 +15,8 @@ tabs:
               display: Template
               listable: false
               visibility: hidden
-          - handle: title
+          -
+            handle: title
             field:
               type: text
               required: true
@@ -21,26 +24,31 @@ tabs:
                 - required
               display: 'Page title'
               listable: true
-          - handle: slug
+          -
+            handle: slug
             field:
               type: slug
               localizable: true
               validate: 'max:200'
               display: 'Page uri'
               show_regenerate: true
-      - display: Content
+      -
+        display: Content
         fields:
-          - handle: header_title
+          -
+            handle: header_title
             field:
               type: text
               display: 'Header title'
               listable: false
-          - handle: header_image
+          -
+            handle: header_image
             field:
               container: default
               type: assets
               display: 'Header image'
-          - handle: blocks
+          -
+            handle: blocks
             field:
               type: replicator
               display: Blocks
@@ -52,24 +60,29 @@ tabs:
                     paragraph:
                       display: Paragraph
                       fields:
-                        - import: common.paragraph
+                        -
+                          import: common.paragraph
                     image:
                       display: Image
                       fields:
-                        - import: common.image
+                        -
+                          import: common.image
                     map:
                       display: Map
                       fields:
-                        - import: common.map
+                        -
+                          import: common.map
                     call_to_action:
                       display: 'Call to Action'
                       fields:
-                        - import: common.call_to_action
+                        -
+                          import: common.call_to_action
   sidebar:
-    display: Sidebar
     sections:
-      - fields:
-          - handle: parent
+      -
+        fields:
+          -
+            handle: parent
             field:
               type: entries
               collections:

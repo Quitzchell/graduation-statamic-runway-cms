@@ -1,20 +1,13 @@
 title: Directors
-template: default
-layout: layout
 revisions: false
+title_format: '{name} {middle_name} {surname}'
 slugs: false
 sort_dir: asc
-title_format: '{name} {middle_name} {surname}'
-
 date_behavior:
   past: public
   future: private
-
 preview_targets:
   -
     label: Entry
     url: '{permalink}'
     refresh: true
-
-blueprints:
-  - director

@@ -6,7 +6,8 @@ tabs:
       -
         display: 'General information'
         fields:
-          - handle: template
+          -
+            handle: template
             field:
               dictionary: templates
               default: review
@@ -59,21 +60,24 @@ tabs:
                     paragraph:
                       display: Paragraph
                       fields:
-                        - import: common.paragraph
+                        -
+                          import: common.paragraph
                     image:
                       display: Image
                       fields:
-                        - import: common.image
+                        -
+                          import: common.image
                     map:
                       display: Map
                       fields:
-                        - import: common.map
+                        -
+                          import: common.map
                     call_to_action:
                       display: 'Call to Action'
                       fields:
-                        - import: common.call_to_action
+                        -
+                          import: common.call_to_action
   sidebar:
-    display: Sidebar
     sections:
       -
         fields:
