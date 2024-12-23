@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Blog\RenderBlogDetailAction;
+use App\Actions\Blog\RenderBlogOverviewAction;
 use App\Actions\Homepage\RenderHomepageAction;
+use App\Actions\Review\RenderReviewDetailAction;
+use App\Actions\Review\RenderReviewOverviewAction;
 use App\Dictionaries\Templates;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -12,7 +16,9 @@ use Statamic\Entries\Entry;
 
 class ContentController
 {
-    public function __construct(private Templates $templates) {}
+    public function __construct(private Templates $templates)
+    {
+    }
 
     public function getIndex(Request $request, $uri = null)
     {
@@ -25,7 +31,7 @@ class ContentController
             ->where('slug', $segments[0])
             ->first();
 
-        if (! $page) {
+        if (!$page) {
             abort(404);
         }
 
@@ -42,20 +48,46 @@ class ContentController
     private function resolveMethodForTemplate(string $template): string
     {
         $options = $this->templates->options();
-
-        // If the template is valid, return its method
         if (array_key_exists($template, $options)) {
             return $this->templates->get($template)->extra()['method'];
         }
 
-        // Throw an exception if the template is invalid
         throw new InvalidArgumentException('Invalid template');
     }
 
     public function getHomepage(
-        Entry $page,
+        Entry                $page,
         RenderHomepageAction $action
-    ): JsonResponse {
+    ): JsonResponse
+    {
         return $action->execute($page);
+    }
+
+    public function getBlog(
+        Entry                    $page,
+        array                    $segments,
+        RenderBlogOverviewAction $overviewAction,
+        RenderBlogDetailAction   $detailAction
+    ): JsonResponse
+    {
+        if (count($segments) === 1) {
+            return $overviewAction->execute($page);
+        }
+
+        return $detailAction->execute($page, $segments);
+    }
+
+    public function getReview(
+        Entry                      $page,
+        array                      $segments,
+        RenderReviewDetailAction   $detailAction,
+        RenderReviewOverviewAction $overviewAction
+    ): JsonResponse
+    {
+        if (count($segments) === 1) {
+            return $overviewAction->execute($page);
+        }
+
+        return $detailAction->execute($page, $segments);
     }
 }

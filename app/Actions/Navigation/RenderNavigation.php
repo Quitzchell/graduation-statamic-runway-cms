@@ -2,9 +2,9 @@
 
 namespace App\Actions\Navigation;
 
-use Statamic\Structures\Nav;
-use Statamic\Facades\Entry;
 use Illuminate\Http\JsonResponse;
+use Statamic\Facades\Entry;
+use Statamic\Structures\Nav;
 
 class RenderNavigation
 {
