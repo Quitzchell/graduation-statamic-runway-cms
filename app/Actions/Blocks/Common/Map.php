@@ -13,7 +13,7 @@ class Map implements HasBlockResolver
             'text' => $block['text'],
             'location' => implode(',', [
                 $block['google_maps']['coordinates']['lat'],
-                $block['google_maps']['coordinates']['lng']
+                $block['google_maps']['coordinates']['lng'],
             ]),
             'mapKey' => config('services.google_maps.key'),
         ];

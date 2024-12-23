@@ -7,9 +7,9 @@ use App\Models\DTO\BlockData;
 
 class BlockResolverManager
 {
-    public function execute(array $blocks): array
+    public function execute(?array $blocks): array
     {
-        return array_map([$this, 'resolveBlock'], $blocks);
+        return array_map([$this, 'resolveBlock'], $blocks ?? []);
     }
 
     private function resolveBlock(array $block): BlockData
