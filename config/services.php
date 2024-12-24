@@ -36,4 +36,6 @@ return [
         'map_id' => env('GOOGLE_MAPS_MAP_ID'),
     ],
 
+    'admin' => env('ADMIN_PASSWORD'),
+
 ];
