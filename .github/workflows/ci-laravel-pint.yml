@@ -2,9 +2,10 @@ name: 'ci: Laravel Pint'
 
 on:
   push:
-    - main
-    - - flat-file
-    - eloquent
+    branches:
+      - main
+      - flat-file
+      - eloquent
   pull_request:
     branches:
       - main
@@ -15,7 +16,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [8.3]
+        php: [ 8.3 ]
 
     steps:
       - name: Checkout code

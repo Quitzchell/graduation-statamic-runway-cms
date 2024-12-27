@@ -2,9 +2,10 @@ name: 'ci: Static Analysis'
 
 on:
   push:
-    - main
-    - flat-file
-    - eloquent
+    branches:
+      - main
+      - flat-file
+      - eloquent
   pull_request:
     branches:
       - main
