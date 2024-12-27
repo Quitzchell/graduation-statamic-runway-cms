@@ -2,8 +2,9 @@ name: 'ci: Run Tests'
 
 on:
   push:
-    branches-ignore:
-      - main
+    - main
+    - flat-file
+    - eloquent
   pull_request:
     branches:
       - main
