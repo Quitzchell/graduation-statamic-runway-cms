@@ -13,7 +13,7 @@ class ReviewDTO
         public ?string $excerpt,
         public ?string $score,
         public ?string $publishedAt,
-                public ?ReviewableDTO $reviewable
+        public ?ReviewableDTO $reviewable
     ) {}
 
     public static function make($review, ReviewableDTO $reviewable)

@@ -9,7 +9,7 @@ class Paragraph implements HasBlockResolver
     public function resolveBlock(array $block): array
     {
         return [
-            'title' => $block['title'] ?? "",
+            'title' => $block['title'] ?? '',
             'text' => $block['text'],
         ];
     }

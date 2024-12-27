@@ -4,10 +4,8 @@ namespace App\Actions\Review;
 
 use App\Actions\Abstracts\ObjectResolver;
 use App\Models\DTO\MovieDTO;
-use App\Models\DTO\ReviewDTO;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
-use Statamic\Entries\Collection;
 use Statamic\Entries\Entry;
 
 class RenderReviewDetailAction extends ObjectResolver
@@ -32,7 +30,7 @@ class RenderReviewDetailAction extends ObjectResolver
 
         return $this->render($reviewItem['blueprint']['handle'], [
             'title' => $reviewItem->value('title'),
-            'image' => asset('storage/' . $reviewItem->value('image')),
+            'image' => asset('storage/'.$reviewItem->value('image')),
             'reviewItem' => $reviewableDTO,
             'blocks' => $this->resolver->execute($reviewItem->value('blocks')),
         ]);

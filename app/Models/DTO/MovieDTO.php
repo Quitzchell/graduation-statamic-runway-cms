@@ -8,17 +8,15 @@ use Statamic\Entries\Entry;
 class MovieDTO extends ReviewableDTO
 {
     public function __construct(
-        public ?string      $id,
-        public ?string      $title,
-        public ?int         $releaseYear,
-        public ?string      $description,
-        public ?string      $trailerUrl,
+        public ?string $id,
+        public ?string $title,
+        public ?int $releaseYear,
+        public ?string $description,
+        public ?string $trailerUrl,
         public ?DirectorDTO $director,
-        public ?Collection  $actors,
-        public string       $type = self::MOVIE
-    )
-    {
-    }
+        public ?Collection $actors,
+        public string $type = self::MOVIE
+    ) {}
 
     public static function make(Entry $movie): self
     {

@@ -34,10 +34,10 @@ class RenderReviewOverviewAction extends TemplateResolver
                 return ReviewDTO::make($review, $reviewableDTO);
             });
 
-                return $this->render($page, [
-                    'headerItems' => $headerItems,
-                    'reviewItems' => $reviewItems,
-                    'blocks' => $this->resolver->execute($page->value('blocks') ?? []),
-                ]);
+        return $this->render($page, [
+            'headerItems' => $headerItems,
+            'reviewItems' => $reviewItems,
+            'blocks' => $this->resolver->execute($page->value('blocks') ?? []),
+        ]);
     }
 }

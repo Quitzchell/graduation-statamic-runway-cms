@@ -16,9 +16,7 @@ use Statamic\Entries\Entry;
 
 class ContentController
 {
-    public function __construct(private Templates $templates)
-    {
-    }
+    public function __construct(private Templates $templates) {}
 
     public function getIndex(Request $request, $uri = null)
     {
@@ -31,7 +29,7 @@ class ContentController
             ->where('slug', $segments[0])
             ->first();
 
-        if (!$page) {
+        if (! $page) {
             abort(404);
         }
 
@@ -56,20 +54,18 @@ class ContentController
     }
 
     public function getHomepage(
-        Entry                $page,
+        Entry $page,
         RenderHomepageAction $action
-    ): JsonResponse
-    {
+    ): JsonResponse {
         return $action->execute($page);
     }
 
     public function getBlog(
-        Entry                    $page,
-        array                    $segments,
+        Entry $page,
+        array $segments,
         RenderBlogOverviewAction $overviewAction,
-        RenderBlogDetailAction   $detailAction
-    ): JsonResponse
-    {
+        RenderBlogDetailAction $detailAction
+    ): JsonResponse {
         if (count($segments) === 1) {
             return $overviewAction->execute($page);
         }
@@ -78,12 +74,11 @@ class ContentController
     }
 
     public function getReview(
-        Entry                      $page,
-        array                      $segments,
-        RenderReviewDetailAction   $detailAction,
+        Entry $page,
+        array $segments,
+        RenderReviewDetailAction $detailAction,
         RenderReviewOverviewAction $overviewAction
-    ): JsonResponse
-    {
+    ): JsonResponse {
         if (count($segments) === 1) {
             return $overviewAction->execute($page);
         }
