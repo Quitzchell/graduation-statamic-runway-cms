@@ -1,10 +1,10 @@
 title: Pages
 revisions: false
+route: '/{slug}'
 sort_dir: asc
 date_behavior:
   past: public
   future: private
 structure:
-  root: false
-  max_depth: 2
-route: '/{slug}'
+  root: true
+  slugs: true

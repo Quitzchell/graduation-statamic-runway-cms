@@ -1,10 +1,8 @@
 ---
 id: 78f550f5-b9a4-404a-86e5-fc684b3e3b77
-blueprint: page
+blueprint: home
 title: Home
 header_title: "La gloire est éphémère, mais l'oubli est éternel."
-header_image:
-  - napoleon-on-horseback.jpg
 blocks:
   -
     id: m4szm60u
@@ -35,6 +33,6 @@ blocks:
     title: 'I await your visit'
     text: '<p>Visit me at Les Invalides, where I, Napoleon Bonaparte, rest. Stand before me, and discuss the ambition, triumphs, and sacrifices that shaped our history.</p>'
 updated_by: 1
-updated_at: 1734820969
+updated_at: 1735046888
 template: homepage
 ---
