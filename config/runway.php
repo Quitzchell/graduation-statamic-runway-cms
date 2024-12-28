@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\BlogPost;
+use App\Models\Category;
+
 return [
 
     /*
@@ -12,8 +15,12 @@ return [
     */
 
     'resources' => [
-        \App\Models\BlogPost::class => [
+        BlogPost::class => [
             'name' => 'Blog Post',
+            'title_field' => 'title'
+        ],
+        Category::class => [
+            'name' => 'Category',
             'title_field' => 'title'
         ]
     ],
