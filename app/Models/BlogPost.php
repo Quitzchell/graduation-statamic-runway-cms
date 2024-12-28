@@ -8,4 +8,6 @@ use StatamicRadPack\Runway\Traits\HasRunwayResource;
 class BlogPost extends Model
 {
     use HasRunwayResource;
+
+
 }
