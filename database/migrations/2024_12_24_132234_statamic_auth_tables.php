@@ -11,7 +11,7 @@ class StatamicAuthTables extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('avatar')->after('name')->nullable();
@@ -43,7 +43,7 @@ class StatamicAuthTables extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down()
+    public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn(['super', 'avatar', 'preferences', 'last_login']);
