@@ -29,7 +29,7 @@ tabs:
             handle: trailer_url
             field:
               type: video
-              display: 'Trainer link (YouTube)'
+              display: 'Trailer link (YouTube)'
           -
             handle: description
             field:
