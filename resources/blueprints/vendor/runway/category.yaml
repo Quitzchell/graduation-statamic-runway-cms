@@ -5,7 +5,7 @@ tabs:
       -
         fields:
           -
-            handle: title
+            handle: name
             field:
               type: text
               required: true

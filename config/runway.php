@@ -21,8 +21,8 @@ return [
         ],
         Category::class => [
             'name' => 'Category',
-            'title_field' => 'title'
-        ]
+            'title_field' => 'name',
+        ],
     ],
 
     /*
