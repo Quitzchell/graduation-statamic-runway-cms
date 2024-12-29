@@ -17,7 +17,7 @@ return [
     'resources' => [
         BlogPost::class => [
             'name' => 'Blog Post',
-            'title_field' => 'title'
+            'title_field' => 'title',
         ],
         Category::class => [
             'name' => 'Category',
