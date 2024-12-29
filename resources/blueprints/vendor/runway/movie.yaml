@@ -1,0 +1,63 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      - fields:
+          - handle: title
+            field:
+              type: text
+              validate:
+                - required
+              width: 75
+          - handle: release_year
+            field:
+              type: integer
+              display: 'Year of release'
+              listable: true
+              validate:
+                - required
+                - 'min:1800'
+                - 'max:2100'
+              width: 25
+          - handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:255'
+              listable: false
+              sortable: false
+          - handle: trailer_url
+            field:
+              type: video
+              display: 'Trailer link (YouTube)'
+          - handle: description
+            field:
+              type: textarea
+              display: Description
+              listable: false
+              sortable: false
+          - handle: actors
+            field:
+              type: has_many
+              display: Actors
+              resource: actor
+              width: 50
+              create: false
+              listable: false
+              sortable: false
+              replicator_preview: false
+              duplicate: false
+              reorderable: true
+              order_column: sort_order
+          - handle: director_id
+            field:
+              type: belongs_to
+              display: Director
+              resource: director
+              width: 50
+              create: false
+              listable: false
+              sortable: false
+              replicator_preview: false
+              duplicate: false
+title: Movie

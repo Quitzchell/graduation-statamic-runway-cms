@@ -1,0 +1,35 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      - fields:
+          - handle: title
+            field:
+              type: text
+              validate:
+                - required
+              width: 75
+          - handle: published_year
+            field:
+              type: integer
+              display: 'Year of release'
+              listable: true
+              validate:
+                - required
+                - 'min:1800'
+                - 'max:2100'
+              width: 25
+          - handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:255'
+              listable: false
+              sortable: false
+          - handle: description
+            field:
+              type: textarea
+              display: Description
+              listable: false
+              sortable: false
+title: Book

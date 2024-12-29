@@ -13,6 +13,11 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             BlogPostSeeder::class,
+            ActorSeeder::class,
+            MovieSeeder::class,
+            DirectorSeeder::class,
+            MovieRelationSeeder::class,
+            ReviewSeeder::class,
         ]);
     }
 }

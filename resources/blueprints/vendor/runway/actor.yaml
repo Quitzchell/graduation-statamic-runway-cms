@@ -1,0 +1,58 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: full_name
+            field:
+              type: text
+              display: Name
+              listable: true
+              sortable: false
+              visibility: hidden
+              replicator_preview: false
+              duplicate: false
+          -
+            handle: name
+            field:
+              type: text
+              validate:
+                - required
+              display: Name
+              listable: false
+              sortable: false
+          -
+            handle: middle_name
+            field:
+              type: text
+              display: 'Middle name'
+              listable: false
+              sortable: false
+          -
+            handle: surname
+            field:
+              type: text
+              validate:
+                - required
+              display: Surname
+              listable: false
+              sortable: false
+          -
+            handle: date_of_birth
+            field:
+              type: date
+              display: 'Date of Birth'
+              listable: false
+              width: 50
+          -
+            handle: movies
+            field:
+              type: has_many
+              display: Movies
+              resource: movie
+              listable: false
+              sortable: false
+              width: 50
+title: Actor

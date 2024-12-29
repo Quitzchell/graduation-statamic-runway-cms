@@ -1,7 +1,12 @@
 <?php
 
+use App\Models\Actor;
 use App\Models\BlogPost;
+use App\Models\Book;
 use App\Models\Category;
+use App\Models\Director;
+use App\Models\Movie;
+use App\Models\Review;
 
 return [
 
@@ -23,6 +28,26 @@ return [
             'name' => 'Category',
             'title_field' => 'name',
         ],
+        Movie::class => [
+            'name' => 'Movies',
+            'title_field' => 'title',
+        ],
+        Actor::class => [
+            'name' => 'Actors',
+            'title_field' => 'full_name',
+        ],
+        Director::class => [
+            'name' => 'Directors',
+            'title_field' => 'full_name',
+        ],
+        Book::class => [
+            'name' => 'Books',
+            'title_field' => 'title',
+        ],
+        Review::class => [
+            'name' => 'Reviews',
+            'title_field' => 'title',
+        ]
     ],
 
     /*

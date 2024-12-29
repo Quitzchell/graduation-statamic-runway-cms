@@ -84,7 +84,7 @@ class BlogPostSeeder extends Seeder
                         'enabled' => true,
                         'namespace' => 'common',
                     ],
-                ])
+                ]),
             ],
         ];
 
