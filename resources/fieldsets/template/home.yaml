@@ -1,0 +1,37 @@
+title: Homepage
+fields:
+  - handle: header_title
+    field:
+      type: text
+      display: 'Header title'
+      listable: false
+  - handle: header_image
+    field:
+      container: default
+      type: assets
+      display: 'Header image'
+  - handle: blocks
+    field:
+      type: replicator
+      display: Blocks
+      listable: false
+      sets:
+        cms_content:
+          display: 'CMS content'
+          sets:
+            paragraph:
+              display: Paragraph
+              fields:
+                - import: common.paragraph
+            image:
+              display: Image
+              fields:
+                - import: common.image
+            map:
+              display: Map
+              fields:
+                - import: common.map
+            call_to_action:
+              display: 'Call to Action'
+              fields:
+                - import: common.call_to_action

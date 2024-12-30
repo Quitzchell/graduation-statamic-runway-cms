@@ -1,0 +1,39 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      - display: 'Menu structure'
+        fields:
+          - handle: menu_id
+            field:
+              resource: menu
+              type: belongs_to
+              display: Menu
+              listable: true
+              sortable: false
+              visibility: hidden
+              replicator_preview: false
+              duplicate: false
+          #          -
+          #            handle: page_id
+          #            field:
+          #              type: belongs_to
+          #              display: Page
+          #              listable: true
+          #              sortable: false
+          #              visibility: hidden
+          #              replicator_preview: false
+          #              duplicate: false
+          - handle: pages
+            field:
+              resource: page
+              type: has_many
+              display: 'Child pages'
+              create: false
+              listable: false
+              sortable: false
+              replicator_preview: false
+              duplicate: false
+              reorderable: true
+              order_column: sort_order
+title: 'Menu manager'

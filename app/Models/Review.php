@@ -27,6 +27,7 @@ class Review extends Model
         'score',
         'is_published',
         'published_at',
+        'blocks'
     ];
 
     /* Relations */

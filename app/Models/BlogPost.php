@@ -24,6 +24,7 @@ class BlogPost extends Model
         'category_id',
         'published_at',
         'published',
+        'blocks'
     ];
 
     /* Relations */

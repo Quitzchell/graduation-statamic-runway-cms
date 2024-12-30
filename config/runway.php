@@ -5,7 +5,10 @@ use App\Models\BlogPost;
 use App\Models\Book;
 use App\Models\Category;
 use App\Models\Director;
+use App\Models\Menu;
+use App\Models\MenuManager;
 use App\Models\Movie;
+use App\Models\Page;
 use App\Models\Review;
 
 return [
@@ -20,6 +23,18 @@ return [
     */
 
     'resources' => [
+        Menu::class => [
+            'name' => 'Menu',
+            'hidden' => true
+        ],
+        Page::class => [
+            'name' => 'Page',
+
+        ],
+        MenuManager::class => [
+            'name' => 'Menu manager',
+            'title_field' => 'title',
+        ],
         BlogPost::class => [
             'name' => 'Blog Post',
             'title_field' => 'title',
@@ -47,7 +62,7 @@ return [
         Review::class => [
             'name' => 'Reviews',
             'title_field' => 'title',
-        ]
+        ],
     ],
 
     /*

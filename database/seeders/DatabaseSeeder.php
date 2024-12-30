@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             DirectorSeeder::class,
             MovieRelationSeeder::class,
             ReviewSeeder::class,
+            MenuSeeder::class
         ]);
     }
 }

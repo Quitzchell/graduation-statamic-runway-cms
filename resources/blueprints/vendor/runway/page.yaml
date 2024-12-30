@@ -1,0 +1,55 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+              display: 'Page uri'
+              show_regenerate: true
+              listable: false
+              sortable: false
+              replicator_preview: false
+              duplicate: false
+              from: name
+          -
+            handle: template
+            field:
+              previews: false
+              max_sets: 1
+              type: replicator
+              display: template
+              listable: false
+              sortable: false
+              replicator_preview: false
+              duplicate: false
+              sets:
+                new_set_group:
+                  display: Template
+                  sets:
+                    homepage:
+                      display: Homepage
+                      fields:
+                        -
+                          import: template.home
+                    blog:
+                      display: Blog
+                      fields:
+                        -
+                          import: template.blog
+                    review:
+                      display: Review
+                      fields:
+                        -
+                          import: template.review
+title: Page
