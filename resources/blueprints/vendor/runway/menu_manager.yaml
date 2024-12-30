@@ -14,16 +14,14 @@ tabs:
               visibility: hidden
               replicator_preview: false
               duplicate: false
-          #          -
-          #            handle: page_id
-          #            field:
-          #              type: belongs_to
-          #              display: Page
-          #              listable: true
-          #              sortable: false
-          #              visibility: hidden
-          #              replicator_preview: false
-          #              duplicate: false
+          - handle: page_id
+            field:
+              type: belongs_to
+              display: Page
+              listable: false
+              sortable: false
+              replicator_preview: false
+              duplicate: false
           - handle: pages
             field:
               resource: page

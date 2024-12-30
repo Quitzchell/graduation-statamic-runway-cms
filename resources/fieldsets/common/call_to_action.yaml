@@ -31,17 +31,17 @@ fields:
       display: Text
       listable: false
   -
-    handle: urlable_id
+    handle: page_id
     field:
-      max_items: 1
-      collections:
-        - pages
-      type: entries
-      display: 'Button url'
+      type: belongs_to
+      resource: page
+      display: 'Button target'
       listable: false
       sortable: false
       replicator_preview: false
       duplicate: false
+      create: false
+      edit: false
   -
     handle: button_text
     field:

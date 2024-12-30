@@ -28,7 +28,7 @@ tabs:
               previews: false
               max_sets: 1
               type: replicator
-              display: template
+              display: Template
               listable: false
               sortable: false
               replicator_preview: false
