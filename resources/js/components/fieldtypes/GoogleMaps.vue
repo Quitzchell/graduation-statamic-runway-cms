@@ -28,7 +28,6 @@ export default {
         },
         value: {
             type: Object,
-            default: () => ({coordinates: {lat: -33.8688, lng: 151.2195}, formatted_address: ""}),
         },
     },
 
@@ -44,10 +43,10 @@ export default {
 
     computed: {
         coordinates() {
-            return this.value.coordinates || { lat: -33.8688, lng: 151.2195 };
+            return this.value?.coordinates ?? {lat: -33.8688, lng: 151.2195};
         },
         displayAddress() {
-            return this.value.formatted_address || "";
+            return this.value?.formatted_address ?? "";
         },
     },
 
