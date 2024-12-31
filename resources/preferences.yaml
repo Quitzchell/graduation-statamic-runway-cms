@@ -1,0 +1,43 @@
+nav:
+  reorder:
+    - content
+    - blog
+    - reviews
+    - movies
+  sections:
+    content:
+      reorder:
+        - 'content::menu_manager'
+        - 'content::pages'
+        - 'content::assets'
+        - 'content::globals'
+        - 'content::collections'
+        - 'content::navigation'
+        - 'content::taxonomies'
+      items:
+        'content::collections': '@hide'
+        'content::navigation': '@hide'
+        'content::taxonomies': '@hide'
+    blog:
+      action: '@create'
+      display: Blog
+      items:
+        'content::category': '@move'
+        'content::blog_post': '@move'
+    reviews:
+      action: '@create'
+      display: Reviews
+      items:
+        'content::reviews': '@move'
+    movies:
+      action: '@create'
+      display: Movies
+      items:
+        'content::actors': '@move'
+        'content::movies': '@move'
+        'content::directors': '@move'
+    books:
+      action: '@create'
+      display: Books
+      items:
+        'content::books': '@move'
