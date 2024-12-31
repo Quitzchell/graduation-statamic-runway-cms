@@ -17,8 +17,23 @@ class MenuManagerSeeder extends Seeder
 
         foreach ($menus as $menu) {
             MenuManager::create([
-               'menu_id' => $menu->getKey(),
+                'menu_id' => $menu->getKey(),
             ]);
         }
+
+        MenuManager::first()->update([
+            'menu_items' => json_encode([
+                [
+                    "id" => "m5cfwlvu",
+                    "type" => "menu_structure",
+                    "enabled" => true,
+                    "page_id" => 2
+                ], [
+                    "id" => "m5cfwqln",
+                    "type" => "menu_structure",
+                    "enabled" => true, "page_id" => 3
+                ]
+            ])
+        ]);
     }
 }
