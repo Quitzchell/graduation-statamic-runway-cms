@@ -97,3 +97,4 @@ editor:
           display: Books
           items:
             'content::books': '@move'
+        settings: '@hide'
