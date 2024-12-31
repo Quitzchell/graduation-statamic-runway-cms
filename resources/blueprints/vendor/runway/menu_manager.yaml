@@ -1,3 +1,4 @@
+hide: true
 tabs:
   main:
     display: Main
@@ -10,6 +11,7 @@ tabs:
             field:
               type: text
               display: Name
+              filterable: false
               sortable: false
               listable: true
               visibility: computed
