@@ -29,11 +29,10 @@ return [
         ],
         Page::class => [
             'name' => 'Page',
-
         ],
         MenuManager::class => [
             'name' => 'Menu manager',
-            'title_field' => 'title',
+            'title_field' => 'name',
         ],
         BlogPost::class => [
             'name' => 'Blog Post',

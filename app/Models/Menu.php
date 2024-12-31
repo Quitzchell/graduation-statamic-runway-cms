@@ -15,12 +15,4 @@ class Menu extends Model
     protected $fillable = [
         'name',
     ];
-
-    /* Relations */
-    public function items(): HasMany
-    {
-        return $this->hasMany(MenuManager::class)
-            ->whereNull('parent_id')
-            ->orderBy('sort');
-    }
 }

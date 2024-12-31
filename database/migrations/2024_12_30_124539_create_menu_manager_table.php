@@ -18,9 +18,7 @@ return new class extends Migration
         Schema::create('menu_manager', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Menu::class)->nullable()->constrained();
-            $table->foreignIdFor(Page::class)->nullable()->constrained();
-            $table->foreignId('parent_id')->nullable()->constrained('menu_manager')->cascadeOnDelete();
-            $table->integer('sort_order')->nullable();
+            $table->json('menu_items')->nullable();
             $table->timestamps();
         });
     }

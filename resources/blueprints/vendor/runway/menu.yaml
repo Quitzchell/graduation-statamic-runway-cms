@@ -1,20 +1,10 @@
 tabs:
   main:
-    display: Main
-    sections:
+    fields:
       -
-        fields:
-          -
-            handle: name
-            field:
-              type: text
-              display: Name
-              listable: true
-              sortable: false
-              replicator_preview: false
-              duplicate: false
+        handle: name
+        field:
+          type: text
+          display: Name
   sidebar:
-    display: Sidebar
-    sections:
-      - {  }
-title: Menu
+    fields: {  }

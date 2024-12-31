@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use StatamicRadPack\Runway\Traits\HasRunwayResource;
 
 class MenuManager extends Model
@@ -15,9 +15,7 @@ class MenuManager extends Model
 
     protected $fillable = [
         'menu_id',
-        'page_id',
-        'parent_id',
-        'sort',
+        'menu_items'
     ];
 
     /* Relations */
@@ -26,18 +24,19 @@ class MenuManager extends Model
         return $this->belongsTo(Menu::class);
     }
 
-    public function page(): BelongsTo
+    /* Assessors */
+    public function name(): Attribute
     {
-        return $this->belongsTo(Page::class);
+        return Attribute::make(
+            get: fn() => $this->menu->name
+        );
     }
 
-    public function parent(): BelongsTo
+    /* Searchable */
+    public function scopeRunwaySearch($query, $searchQuery)
     {
-        return $this->belongsTo(self::class, 'parent_id');
-    }
-
-    public function children(): HasMany
-    {
-        return $this->hasMany(self::class, 'parent_id');
+        return $query->whereHas('menu', function ($q) use ($searchQuery) {
+            $q->where('name', 'like', '%' . $searchQuery . '%');
+        });
     }
 }

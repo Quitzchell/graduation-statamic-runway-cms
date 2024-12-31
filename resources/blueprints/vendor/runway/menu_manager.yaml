@@ -2,36 +2,73 @@ tabs:
   main:
     display: Main
     sections:
-      - display: 'Menu structure'
+      -
+        display: 'Menu structure'
         fields:
-          - handle: menu_id
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              sortable: false
+              listable: true
+              visibility: computed
+              replicator_preview: false
+              duplicate: false
+              hide_display: true
+          -
+            handle: menu_id
             field:
               resource: menu
               type: belongs_to
               display: Menu
-              listable: true
+              listable: false
               sortable: false
               visibility: hidden
               replicator_preview: false
               duplicate: false
-          - handle: page_id
-            field:
-              type: belongs_to
-              display: Page
-              listable: false
-              sortable: false
-              replicator_preview: false
-              duplicate: false
-          - handle: pages
-            field:
-              resource: page
-              type: has_many
-              display: 'Child pages'
               create: false
+              edit: false
+          -
+            handle: menu_items
+            field:
+              type: replicator
+              display: 'Menu items'
               listable: false
               sortable: false
               replicator_preview: false
               duplicate: false
-              reorderable: true
-              order_column: sort_order
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    menu_structure:
+                      display: 'Menu Item'
+                      fields:
+                        -
+                          handle: page_id
+                          field:
+                            resource: page
+                            type: belongs_to
+                            display: Page
+                            listable: false
+                            sortable: false
+                            replicator_preview: false
+                            duplicate: false
+                            create: false
+                            edit: false
+                        -
+                          handle: parent_id
+                          field:
+                            resource: page
+                            type: belongs_to
+                            display: 'Child pages'
+                            listable: false
+                            sortable: false
+                            replicator_preview: false
+                            duplicate: false
+                            create: false
+                            edit: false
+                            reorderable: true
+                            order_column: sort_order
 title: 'Menu manager'
