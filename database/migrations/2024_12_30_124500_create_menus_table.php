@@ -8,8 +8,6 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void
     {
@@ -23,8 +21,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-     public function down(): void
-     {
-         Schema::dropIfExists('menus');
-     }
+    public function down(): void
+    {
+        Schema::dropIfExists('menus');
+    }
 };
