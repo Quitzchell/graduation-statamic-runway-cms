@@ -24,16 +24,16 @@ class MenuManagerSeeder extends Seeder
         MenuManager::first()->update([
             'menu_items' => json_encode([
                 [
-                    "id" => "m5cfwlvu",
-                    "type" => "menu_structure",
-                    "enabled" => true,
-                    "page_id" => 2
+                    'id' => 'm5cfwlvu',
+                    'type' => 'menu_structure',
+                    'enabled' => true,
+                    'page_id' => 2,
                 ], [
-                    "id" => "m5cfwqln",
-                    "type" => "menu_structure",
-                    "enabled" => true, "page_id" => 3
-                ]
-            ])
+                    'id' => 'm5cfwqln',
+                    'type' => 'menu_structure',
+                    'enabled' => true, 'page_id' => 3,
+                ],
+            ]),
         ]);
     }
 }

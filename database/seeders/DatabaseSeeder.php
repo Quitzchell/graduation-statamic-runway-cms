@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\MenuManager;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,7 +20,7 @@ class DatabaseSeeder extends Seeder
             ReviewSeeder::class,
             MenuSeeder::class,
             PageSeeder::class,
-            MenuManagerSeeder::class
+            MenuManagerSeeder::class,
         ]);
     }
 }
