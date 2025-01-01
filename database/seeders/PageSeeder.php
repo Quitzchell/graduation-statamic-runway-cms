@@ -34,7 +34,7 @@ class PageSeeder extends Seeder
                                 'enabled' => true,
                                 'namespace' => 'common',
                                 'button_target' => 'page',
-                                'page_id' => 1,
+                                'page_id' => 3,
                                 'button_text' => 'Read more',
                             ],
                             [
