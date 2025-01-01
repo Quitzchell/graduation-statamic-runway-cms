@@ -46,7 +46,11 @@ tabs:
             field:
               container: default
               type: assets
+              max_files: 1
+              min_files: 1
               display: 'Header image'
+              validate:
+                - required
           -
             handle: blocks
             field:
