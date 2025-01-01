@@ -25,51 +25,51 @@ return [
     'resources' => [
         Menu::class => [
             'name' => 'Menu',
-            'hidden' => true
+            'hidden' => true,
         ],
         Page::class => [
             'name' => 'Pages',
-            'cp_icon' => 'collection'
+            'cp_icon' => 'collection',
         ],
         MenuManager::class => [
             'name' => 'Menu manager',
             'title_field' => 'name',
-            'cp_icon' => 'list'
+            'cp_icon' => 'list',
         ],
         BlogPost::class => [
             'name' => 'Blog Post',
             'title_field' => 'title',
-            'cp_icon' => 'entries'
+            'cp_icon' => 'entries',
         ],
         Category::class => [
             'name' => 'Category',
             'title_field' => 'name',
-            'cp_icon' => 'tags'
+            'cp_icon' => 'tags',
         ],
         Movie::class => [
             'name' => 'Movies',
             'title_field' => 'title',
-            'cp_icon' => 'video'
+            'cp_icon' => 'video',
         ],
         Actor::class => [
             'name' => 'Actors',
             'title_field' => 'full_name',
-            'cp_icon' => 'user'
+            'cp_icon' => 'user',
         ],
         Director::class => [
             'name' => 'Directors',
             'title_field' => 'full_name',
-            'cp_icon' => 'user'
+            'cp_icon' => 'user',
         ],
         Book::class => [
             'name' => 'Books',
             'title_field' => 'title',
-            'cp_icon' => 'book-pages'
+            'cp_icon' => 'book-pages',
         ],
         Review::class => [
             'name' => 'Reviews',
             'title_field' => 'title',
-            'cp_icon' => 'entries'
+            'cp_icon' => 'entries',
         ],
     ],
 
