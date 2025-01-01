@@ -1,16 +1,21 @@
 title: Homepage
 fields:
-  - handle: header_title
+  -
+    handle: header_title
     field:
       type: text
       display: 'Header title'
       listable: false
-  - handle: header_image
+  -
+    handle: header_image
     field:
       container: default
       type: assets
       display: 'Header image'
-  - handle: blocks
+      max_files: 1
+      min_files: 1
+  -
+    handle: blocks
     field:
       type: replicator
       display: Blocks
@@ -22,16 +27,20 @@ fields:
             paragraph:
               display: Paragraph
               fields:
-                - import: common.paragraph
+                -
+                  import: common.paragraph
             image:
               display: Image
               fields:
-                - import: common.image
+                -
+                  import: common.image
             map:
               display: Map
               fields:
-                - import: common.map
+                -
+                  import: common.map
             call_to_action:
               display: 'Call to Action'
               fields:
-                - import: common.call_to_action
+                -
+                  import: common.call_to_action
