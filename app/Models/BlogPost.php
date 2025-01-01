@@ -13,7 +13,9 @@ class BlogPost extends Model
     protected $table = 'blog_posts';
 
     protected $casts = [
-        'published' => 'boolean',
+        'is_published' => 'boolean',
+        'published_at' => 'date',
+        'blocks' => 'array',
     ];
 
     protected $fillable = [
@@ -23,8 +25,8 @@ class BlogPost extends Model
         'image',
         'category_id',
         'published_at',
-        'published',
-        'blocks'
+        'is_published',
+        'blocks',
     ];
 
     /* Relations */

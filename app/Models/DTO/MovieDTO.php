@@ -2,8 +2,8 @@
 
 namespace App\Models\DTO;
 
+use App\Models\Movie;
 use Illuminate\Support\Collection;
-use Statamic\Entries\Entry;
 
 class MovieDTO extends ReviewableDTO
 {
@@ -18,16 +18,18 @@ class MovieDTO extends ReviewableDTO
         public string $type = self::MOVIE
     ) {}
 
-    public static function make(Entry $movie): self
+    public static function make(Movie $movie): self
     {
+        $movie->load(['director', 'actors']);
+
         return new self(
             $movie->id,
-            $movie['title'],
-            $movie['release_year'],
-            $movie['description'],
-            $movie['trailer_url'] ? convertToEmbedYouTubeUrl($movie['trailer_url']) : null,
-            $movie['director'] ? DirectorDTO::make($movie['director']) : null,
-            collect($movie['actors'])->map(fn ($actor) => ActorDTO::make($actor)),
+            $movie->title,
+            $movie->release_year,
+            $movie->description,
+            $movie->trailer_url ? convertToEmbedYouTubeUrl($movie->trailer_url) : null,
+            $movie->director ? DirectorDTO::make($movie->director) : null,
+            collect($movie->actors)->map(fn ($actor) => ActorDTO::make($actor)),
         );
     }
 }

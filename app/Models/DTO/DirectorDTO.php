@@ -2,7 +2,7 @@
 
 namespace App\Models\DTO;
 
-use Statamic\Entries\Entry;
+use App\Models\Director;
 
 class DirectorDTO
 {
@@ -14,14 +14,14 @@ class DirectorDTO
         public ?string $dateOfBirth
     ) {}
 
-    public static function make(Entry $director)
+    public static function make(Director $director)
     {
         return new self(
-            $director['name'],
-            $director['middle_name'],
-            $director['surname'],
-            preg_replace('/\s+/', ' ', $director['title']),
-            $director['date_of_birth'],
+            $director->name,
+            $director->middle_name,
+            $director->surname,
+            $director->full_name,
+            $director->date_of_birth,
         );
     }
 }

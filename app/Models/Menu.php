@@ -15,4 +15,9 @@ class Menu extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function items(): HasMany
+    {
+        return $this->hasMany(MenuManager::class);
+    }
 }

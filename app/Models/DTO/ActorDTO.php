@@ -2,7 +2,7 @@
 
 namespace App\Models\DTO;
 
-use Statamic\Entries\Entry;
+use App\Models\Actor;
 
 class ActorDTO
 {
@@ -14,14 +14,14 @@ class ActorDTO
         public ?string $dateOfBirth
     ) {}
 
-    public static function make(Entry $actor)
+    public static function make(Actor $actor)
     {
         return new self(
-            $actor['name'],
-            $actor['middle_name'],
-            $actor['surname'],
-            preg_replace('/\s+/', ' ', $actor['title']),
-            $actor['date_of_birth'],
+            $actor->name,
+            $actor->middle_name,
+            $actor->surname,
+            $actor->full_name,
+            $actor->date_of_birth,
         );
     }
 }

@@ -3,30 +3,29 @@
 namespace App\Actions\Blog;
 
 use App\Actions\Abstracts\TemplateResolver;
+use App\Models\BlogPost;
 use App\Models\DTO\BlogPostDTO;
+use App\Models\Page;
 use Illuminate\Http\JsonResponse;
-use Statamic\Entries\Collection;
-use Statamic\Entries\Entry;
 
 class RenderBlogOverviewAction extends TemplateResolver
 {
-    public function execute(Entry $page): JsonResponse
+    public function execute(Page $page): JsonResponse
     {
+        $templateData = $page->template[0];
         $headerItems = [
-            'headerImage' => asset('storage/'.$page->value('header_image')[0]),
-            'headerTitle' => $page->get('header_title'),
+            'headerImage' => asset('storage/'.$templateData['header_image']),
+            'headerTitle' => $templateData['header_title'],
         ];
 
-        $blogPostCollection = Collection::find('blog_posts');
-        $blogPostItems = $blogPostCollection
-            ->queryEntries()
-            ->get()
-            ->map(fn ($blogPost) => BlogPostDTO::make($blogPost));
+        $blogPostItems = BlogPost::where('is_published', true)->get()->map(function (BlogPost $blogPost) {
+            return BlogPostDTO::make($blogPost);
+        });
 
         return $this->render($page, [
             'headerItems' => $headerItems,
             'blogPostItems' => $blogPostItems,
-            'blocks' => $this->resolver->execute($page->value('blocks') ?? []),
+            'blocks' => $this->resolver->execute($templateData['blocks'] ?? []),
         ]);
     }
 }

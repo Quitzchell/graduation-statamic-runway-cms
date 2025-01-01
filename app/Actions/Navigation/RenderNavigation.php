@@ -2,28 +2,24 @@
 
 namespace App\Actions\Navigation;
 
+use App\Models\Menu;
+use App\Models\Page;
 use Illuminate\Http\JsonResponse;
-use Statamic\Facades\Entry;
-use Statamic\Structures\Nav;
 
 class RenderNavigation
 {
     public function __invoke(): JsonResponse
     {
-        $menuItems = Nav::find('main_menu')->in('default')->tree();
+        $navigation = Menu::find(1)
+            ->items
+            ->flatmap(fn ($item) => collect($item->menu_items)
+                ->map(fn ($menuItem) => Page::find($menuItem['page_id']))
+                ->map(fn ($page) => [
+                    'name' => $page->name,
+                    'uri' => $page->uri(),
+                ])
+            )->values();
 
-        $pages = [];
-        foreach ($menuItems as $item) {
-            $entry = Entry::find($item['entry']);
-
-            if ($entry && $entry->template[0]['value'] !== 'homepage') {
-                $pages[] = [
-                    'name' => $entry->title,
-                    'uri' => ltrim($entry->uri(), '/'),
-                ];
-            }
-        }
-
-        return response()->json($pages);
+        return response()->json($navigation);
     }
 }

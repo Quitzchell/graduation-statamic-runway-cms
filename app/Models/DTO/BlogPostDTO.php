@@ -2,8 +2,8 @@
 
 namespace App\Models\DTO;
 
+use App\Models\BlogPost;
 use Illuminate\Support\Carbon;
-use Statamic\Entries\Entry;
 
 class BlogPostDTO
 {
@@ -17,16 +17,16 @@ class BlogPostDTO
         public ?string $publishedAt,
     ) {}
 
-    public static function make(Entry $blogPost)
+    public static function make(BlogPost $blogPost)
     {
         return new self(
             $blogPost->id,
-            $blogPost['title'],
-            $blogPost['slug'],
-            $blogPost['excerpt'],
-            $blogPost['category_id']['title'],
-            $blogPost['category_id']['id'],
-            Carbon::parse($blogPost['published_at'])->format('d-m-Y'),
+            $blogPost->title,
+            $blogPost->slug,
+            $blogPost->excerpt,
+            $blogPost->category->name,
+            $blogPost->category->getKey(),
+            Carbon::parse($blogPost->published_at)->format('d-m-Y'),
         );
     }
 }

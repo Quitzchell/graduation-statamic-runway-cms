@@ -15,7 +15,11 @@ class MenuManager extends Model
 
     protected $fillable = [
         'menu_id',
-        'menu_items'
+        'menu_items',
+    ];
+
+    protected $casts = [
+        'menu_items' => 'array',
     ];
 
     /* Relations */
@@ -28,7 +32,7 @@ class MenuManager extends Model
     public function name(): Attribute
     {
         return Attribute::make(
-            get: fn() => $this->menu->name
+            get: fn () => $this->menu->name
         );
     }
 
@@ -36,7 +40,7 @@ class MenuManager extends Model
     public function scopeRunwaySearch($query, $searchQuery)
     {
         return $query->whereHas('menu', function ($q) use ($searchQuery) {
-            $q->where('name', 'like', '%' . $searchQuery . '%');
+            $q->where('name', 'like', '%'.$searchQuery.'%');
         });
     }
 }

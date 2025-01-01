@@ -8,13 +8,13 @@ use App\Actions\Homepage\RenderHomepageAction;
 use App\Actions\Review\RenderReviewDetailAction;
 use App\Actions\Review\RenderReviewOverviewAction;
 use App\Dictionaries\Templates;
+use App\Models\Page;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use InvalidArgumentException;
-use Statamic\Entries\Entry;
 
-class ContentController
+readonly class ContentController
 {
     public function __construct(private Templates $templates) {}
 
@@ -24,17 +24,16 @@ class ContentController
 
         $segments = explode('/', $uri);
 
-        $page = Entry::query()
-            ->where('collection', 'pages')
+        $page = Page::query()
             ->where('slug', $segments[0])
             ->first();
 
         if (! $page) {
             abort(404);
         }
-
         try {
-            $template = $page->get('template');
+            $templateData = $page->template[0];
+            $template = $templateData['type'];
             $method = $this->resolveMethodForTemplate($template);
 
             return App::call([$this, $method], ['page' => $page, 'segments' => $segments]);
@@ -54,14 +53,14 @@ class ContentController
     }
 
     public function getHomepage(
-        Entry $page,
+        Page $page,
         RenderHomepageAction $action
     ): JsonResponse {
         return $action->execute($page);
     }
 
     public function getBlog(
-        Entry $page,
+        Page $page,
         array $segments,
         RenderBlogOverviewAction $overviewAction,
         RenderBlogDetailAction $detailAction
@@ -70,11 +69,11 @@ class ContentController
             return $overviewAction->execute($page);
         }
 
-        return $detailAction->execute($page, $segments);
+        return $detailAction->execute($segments);
     }
 
     public function getReview(
-        Entry $page,
+        Page $page,
         array $segments,
         RenderReviewDetailAction $detailAction,
         RenderReviewOverviewAction $overviewAction
@@ -83,6 +82,6 @@ class ContentController
             return $overviewAction->execute($page);
         }
 
-        return $detailAction->execute($page, $segments);
+        return $detailAction->execute($segments);
     }
 }
