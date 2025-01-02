@@ -7,8 +7,8 @@ nav:
   sections:
     content:
       reorder:
-        - 'content::menu_manager'
         - 'content::pages'
+        - 'content::menu_manager'
         - 'content::assets'
         - 'content::globals'
         - 'content::collections'

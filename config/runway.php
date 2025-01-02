@@ -29,7 +29,7 @@ return [
         ],
         Page::class => [
             'name' => 'Pages',
-            'cp_icon' => 'collection',
+            'cp_icon' => 'drawer-file',
         ],
         MenuManager::class => [
             'name' => 'Menu manager',
