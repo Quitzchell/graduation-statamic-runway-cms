@@ -21,7 +21,7 @@ if (!function_exists('convertToEmbedYouTubeUrl')) {
 
         if (isset($parsedUrl['path'])) {
             $pathSegments = explode('/', trim($parsedUrl['path'], '/'));
-            $videoId = current(array_reverse($pathSegments)); // Get the last segment
+            $videoId = current(array_reverse($pathSegments));
 
             $videoId = strtok($videoId, '?&');
 
