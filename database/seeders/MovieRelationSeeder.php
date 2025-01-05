@@ -32,38 +32,47 @@ class MovieRelationSeeder extends Seeder
             [
                 'movie_id' => $this->movies['Napoleon']->getKey(),
                 'actor_id' => $actors['Joaquin']->getKey(),
+                'sort_order' => 0,
             ],
             [
                 'movie_id' => $this->movies['Napoleon']->getKey(),
                 'actor_id' => $actors['Vanessa']->getKey(),
+                'sort_order' => 1,
             ],
             [
                 'movie_id' => $this->movies['Napoleon']->getKey(),
                 'actor_id' => $actors['Tahar']->getKey(),
+                'sort_order' => 2,
             ],
             [
                 'movie_id' => $this->movies['Monsieur N.']->getKey(),
                 'actor_id' => $actors['Philippe']->getKey(),
+                'sort_order' => 0,
             ],
             [
                 'movie_id' => $this->movies['Monsieur N.']->getKey(),
                 'actor_id' => $actors['Richard']->getKey(),
+                'sort_order' => 1,
             ],
             [
                 'movie_id' => $this->movies['Monsieur N.']->getKey(),
                 'actor_id' => $actors['Jay']->getKey(),
+                'sort_order' => 2,
             ],
             [
                 'movie_id' => $this->movies['Waterloo']->getKey(),
                 'actor_id' => $actors['Rod']->getKey(),
+                'sort_order' => 0,
             ],
             [
                 'movie_id' => $this->movies['Waterloo']->getKey(),
                 'actor_id' => $actors['Orson']->getKey(),
+                'sort_order' => 1,
             ],
             [
                 'movie_id' => $this->movies['Waterloo']->getKey(),
                 'actor_id' => $actors['Christopher']->getKey(),
+                'sort_order' => 2,
             ],
         ];
 
