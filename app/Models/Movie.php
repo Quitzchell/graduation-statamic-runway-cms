@@ -26,7 +26,7 @@ class Movie extends Model
     /* Relations */
     public function actors(): BelongsToMany
     {
-        return $this->belongsToMany(Actor::class);
+        return $this->belongsToMany(Actor::class)->orderBy('sort_order');
     }
 
     public function director(): BelongsTo
