@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make(config('services.admin')),
                 'super' => 1,
                 'email_verified_at' => now(),
-            ]
+            ],
         ];
         foreach ($users as $user) {
             User::create($user);

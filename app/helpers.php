@@ -2,20 +2,20 @@
 
 use Statamic\Facades\AssetContainer;
 
-if (!function_exists('convertToEmbedYouTubeUrl')) {
+if (! function_exists('convertToEmbedYouTubeUrl')) {
     function convertToEmbedYouTubeUrl(string $url): string
     {
         $parsedUrl = parse_url($url);
 
-        if (!isset($parsedUrl['host']) ||
-            !str_contains($parsedUrl['host'], 'youtube.com') && !str_contains($parsedUrl['host'], 'youtu.be')) {
+        if (! isset($parsedUrl['host']) ||
+            ! str_contains($parsedUrl['host'], 'youtube.com') && ! str_contains($parsedUrl['host'], 'youtu.be')) {
             throw new InvalidArgumentException('Invalid YouTube URL');
         }
 
         if (isset($parsedUrl['query'])) {
             parse_str($parsedUrl['query'], $queryParams);
             if (isset($queryParams['v'])) {
-                return 'https://www.youtube.com/embed/' . $queryParams['v'];
+                return 'https://www.youtube.com/embed/'.$queryParams['v'];
             }
         }
 
@@ -25,14 +25,14 @@ if (!function_exists('convertToEmbedYouTubeUrl')) {
 
             $videoId = strtok($videoId, '?&');
 
-            return 'https://www.youtube.com/embed/' . $videoId;
+            return 'https://www.youtube.com/embed/'.$videoId;
         }
 
         throw new InvalidArgumentException('Invalid YouTube URL');
     }
 }
 
-if (!function_exists('assetFocusPoints')) {
+if (! function_exists('assetFocusPoints')) {
     function assetFocusPoints(string $containerName, string $assetPath): ?array
     {
         $asset = AssetContainer::find($containerName)
@@ -40,20 +40,18 @@ if (!function_exists('assetFocusPoints')) {
             ->where('path', $assetPath)
             ->first();
 
-        if (!$asset) {
+        if (! $asset) {
             return null;
         }
 
         $focusData = $asset->data()['focus'] ?? null;
 
-        if (!$focusData) {
+        if (! $focusData) {
             return null;
         }
 
         $coordinates = array_slice(explode('-', $focusData), 0, 2);
 
-        return array_map(fn($coord) => $coord . '%', $coordinates);
+        return array_map(fn ($coord) => $coord.'%', $coordinates);
     }
 }
-
-
