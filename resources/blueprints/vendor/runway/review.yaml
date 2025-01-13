@@ -36,9 +36,9 @@ tabs:
               replicator_preview: false
               duplicate: false
               if:
-                reviewable_type: 'equals App\Models\Movie'
+                reviewable_type: 'equals movie'
               validate:
-                - 'required_if:reviewable_type,App\Models\Movie'
+                - 'required_if:reviewable_type,movie'
           -
             handle: book_id
             field:
@@ -51,9 +51,9 @@ tabs:
               replicator_preview: false
               duplicate: false
               if:
-                reviewable_type: 'equals App\Models\Book'
+                reviewable_type: 'equals book'
               validate:
-                - 'required_if:reviewable_type,App\Models\Book'
+                - 'required_if:reviewable_type,book'
       -
         display: Information
         fields:
