@@ -5,7 +5,7 @@ fields:
     field:
       max_files: 1
       min_files: 1
-      container: blogposts
+      container: default
       type: assets
       display: Image
       validate:
