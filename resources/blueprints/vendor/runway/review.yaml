@@ -95,7 +95,7 @@ tabs:
             handle: image
             field:
               max_files: 1
-              container: blogposts
+              container: default
               type: assets
               display: image
               listable: false

@@ -1,5 +1,5 @@
 {
-    "name": "quitzchell/graduation-statamic-cms",
+    "name": "quitzchell/graduation-statamic-runway-cms",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
