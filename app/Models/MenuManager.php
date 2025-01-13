@@ -35,12 +35,4 @@ class MenuManager extends Model
             get: fn () => $this->menu->name
         );
     }
-
-    /* Searchable */
-    public function scopeRunwaySearch($query, $searchQuery)
-    {
-        return $query->whereHas('menu', function ($q) use ($searchQuery) {
-            $q->where('name', 'like', '%'.$searchQuery.'%');
-        });
-    }
 }
